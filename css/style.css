@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("/fonts/tesla-icons/style.css");
+:root {
+  /* color */
+  --bg: #24272c;
+  --label: #7f8493;
+  --gradient: linear-gradient(to bottom, #2fb8ff, #30D5C8);
+}
+body {
+  position: relative;
+  z-index: -3;
+  background-color: var(--bg);
+  color: var(--label);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000000, #2e3035);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  
+}
+a {
+    text-decoration: none;
+    color: var(--label);
+}
+/* Стили элементов*/
+/* тени для панелей */
+.shadow-panel {
+  box-shadow: -18px -18px 20px rgba(255, 255, 255, 0.04),
+    18px 18px 20px rgba(0, 0, 0, 0.25);
+    color: var(--label);
+}
+
+.shadow-panel_preset {
+  box-shadow: -18px -18px 20px rgba(255, 255, 255, 0.04),
+    18px 18px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* тени для кнопок */
+.shadow {
+  box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.05),
+    4px 4px 8px rgba(0, 0, 0, 0.27);
+}
+.shadow:hover i {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+}
+.shadow:hover,
+.shadow_preset {
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.03),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Стиль выпуклой кнопки */
+.batton-ball {
+  position: relative;
+  background-color: var(--bg);
+  box-shadow: -8px -8px 14px rgba(255, 255, 255, 0.07),
+    8px 8px 14px rgba(0, 0, 0, 0.3);
+}
+.batton-ball::before,
+.batton-ball::after {
+  content: "";
+  --size: 0;
+  z-index: 0;
+  position: absolute;
+  top: var(--size);
+  right: var(--size);
+  left: var(--size);
+  bottom: var(--size);
+  border-radius: 100%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.07) 30%,
+    rgba(0, 0, 0, 0.3)
+  );
+}
+.batton-ball::after {
+  --size: -1.8px;
+  z-index: -1;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 1)
+  );
+}
+/* Круглая кнопка с иконкой */
+.button_round {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+/* Layaut */
+.wrapper {
+  position: relative;
+  z-index: -2;
+  width: 390px;
+  max-height: 844px;
+  height: 90%;
+  border-radius: 40px;
+  background: linear-gradient(to bottom, #2a2d32, #131313);
+}
+.content {
+    height: 100%;
+    padding: 20px 30px 100px;
+    position: relative;
+    overflow-y: scroll ;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_inside-page .button_round {
+    font-size: 18px;
+}
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 22px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url(/images/nav_bottom.svg) center/100% auto no-repeat;
+  width: 100%;
+  height: 78px;
+}
+
+.footer_opened {
+    background: none;
+    border-radius: 40px;
+    box-shadow: none;
+    height: initial;
+    padding: 22px;
+}
+.footer_opened::before,
+.footer_opened::after {
+    border-radius: 40px;
+    background: linear-gradient(
+        to left top,
+        rgba(30, 30, 30, 0.7),
+        rgba(35, 35, 35, 1));
+}
+.footer_opened::after {
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.2),
+        rgba(0, 0, 0, 1));
+}
+.footer_opened > * {
+    position: relative;
+    z-index: 1;
+    
+}
+.footer_opened i {
+    margin-right: 0px !important;
+}
+.footer__action {
+    text-align: center;
+}
+.footer__action > i {
+    margin-bottom: 32px;
+}
+.footer__action > div {
+    font-size: 12px;
+}
+.footer__action.active > div {
+    color: #fff;
+}
+.footer__slider {
+    display: flex;
+    align-items: center;
+    margin-bottom: auto;
+}
+.footer__slider > i {
+    font-size: 14px !important;
+}
+.footer__slider > span {
+    font-size: 24px;
+    color: #fff;
+}
+/* Header */
+.title {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.title_lite {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+.info i {
+  font-size: 1.5em;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+/* Menu */
+.menu {
+  margin-top: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  border-radius: 50px;
+}
+.menu__item {
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+/* Стили для активных / наведенных иконок */
+.menu__item:hover,
+.menu__item_active i,
+.footer i:hover,
+i.active,
+.add i  {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__item_active,
+.footer i.active{
+  cursor: default;
+  
+}
+
+/* Section */
+.section {
+  margin-top: 80px;
+  padding: 20px 0px;
+  width: 100%;
+  position: relative;
+  border-radius: 40px;
+  background: linear-gradient(to bottom, #27282a, #202327);
+}
+
+.section a:hover > i {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+}
+.section a:hover .section__text {
+    color: #fff;
+}
+.section::before {
+  --size: -1px;
+  content: "";
+  position: absolute;
+  top: var(--size);
+  left: var(--size);
+  right: var(--size);
+  bottom: var(--size);
+  z-index: -1;
+  border-radius: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+}
+.section__item {
+text-decoration: none;
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  color: var(--label);
+}
+.section__item i {
+  width: 44px;
+  height: 44px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.section__item i:first-child {
+  opacity: 0.6;
+}
+.section__item i:last-child {
+  font-size: 16px;
+  opacity: 0.4;
+  margin-left: auto;
+}
+.section__text {
+  margin-left: 10px;
+}
+.section__title {
+  font-size: 19px;
+  font-weight: 600;
+}
+.section__info {
+  opacity: 0.7;
+}
+/* Footer */
+.footer__glass {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    border-radius: 40px;
+}
+.footer i {
+  display: inline-flex;
+  height: 44px;
+  width: 44px;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+.footer > div:not(.add) > a:first-child {
+  margin-right: 32px;
+}
+.add {
+    --size: 68px;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    margin-left: calc(var(--size) / -2);
+    top: -66%;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    transform: rotate(90deg);
+    opacity: 0.92;
+    cursor: pointer;
+}
+.add:hover {
+    opacity: 1;
+}
+.add::before {
+    background: linear-gradient(
+        to left top,
+        rgba(255, 255, 255, 0.2),
+        rgba(15, 15, 15, 1));
+     z-index: -1;   
+}
+.add::after {
+    --size:-1px;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.2),
+        rgba(0, 0, 0, 1));
+     z-index: -2;   
+}
+/* temperature */
+.temperature {
+    --size: 150px;
+    margin-top: 80px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    display: flex;
+    font-size: 26px;
+    text-shadow: 7px 7px 10px #000000;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -16px -16px 24px rgb(255 255 255 / 7%), 16px 16px 24px rgb(0 0 0 / 30%);
+}
+
+.temperature::before {
+    background: linear-gradient(
+    to right bottom,
+    rgba(20, 20, 20, 0.07) 30%,
+    rgba(0, 0, 0, 0.3)
+  );
+}
+.temperature > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 70%;
+    height: 70%;
+    border-radius: 70%;
+    background: linear-gradient(
+        to left top,
+        rgba(255, 255, 255, 0.2),
+        rgba(15, 15, 15, 0.8));
+}
+
+/* Circle */
+
+.circle {
+    --offset: -10px;
+    position: absolute;
+    top: var(--offset);
+    left: var(--offset);
+    bottom: var(--offset);
+    right: var(--offset);
+    transform: rotate(-90deg);
+}
+.segment {
+    stroke: #30D5C8;
+    fill: transparent;
+    stroke-width: 2px;
+    stroke-dasharray: 45 60;
+    transform: scale(4.7);
+    transform-origin: center;
+    transition: stroke-dasharray 1s linear;
+}
+
+/* Settings */
+.settings {
+    margin-top: 80px;
+    width: 100%;
+}
+.setting {
+    display: flex;
+    align-items: center;
+}
+.setting:not(:last-child) {
+    margin-bottom: 32px;
+}
+.setting__name {
+   
+    margin-right: 16px;
+    width: 30px;
+}
+.setting_active .setting__name {
+    color: #fff;
+}
+.setting__icon {
+    --size:46px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+    margin-right: 32px;
+    width: var(--size);
+    height: var(--size);
+    font-size: 16px;
+}
+.setting__icon::before {
+    background: linear-gradient(
+        to right bottom,
+        rgba(200, 200, 200, 0.07) 30%,
+        rgba(10, 10, 10, 0.5));
+}
+.setting__icon::after {
+    --size:-1px;
+}
+.setting__slider {
+    --size:8px;
+    height: var(--size);
+    background: linear-gradient(to bottom, #000, #333);
+    flex-grow: 1;
+    border-radius: var(--size);
+}
+.setting__slider-fill {
+    position: relative;
+    width: 0;
+    height: 100%;
+    background:var(--gradient);
+    border-radius: var(--size);
+}
+.setting__slider-fill::after {
+    cursor: pointer;
+    --size:30px;
+    content: '';
+    position: absolute;
+    width: var(--size);
+    border-radius: var(--size);
+    top: calc(var(--size) / -8);
+    right: calc(var(--size) / -1);
+    bottom: calc(var(--size) / -8);
+    background: linear-gradient(to bottom, #444, #000);
+    border: 1px solid #333;
+    box-shadow: 4px 8px 12px #000;
+}
+/* Charset */
+.main .charger_tesla {
+    margin-top: 40px;
+}
