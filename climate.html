@@ -25,8 +25,8 @@
                 
                 <circle class="segment" r="9.55%" cx="50%" cy="50%"></circle>
                </svg>
-            <div>
-                20&deg C
+            <div class="rangeValue">
+                15&deg C
             </div>
            </div>
            <section class="settings">
@@ -36,10 +36,11 @@
                    <div class="button_round batton-ball setting__icon">
                     <i class="tesla_snow active"></i>
                     </div>
-                   <div class="setting__slider">
-                       <div class="setting__slider-fill" style="width: 30%;">
-
-                       </div>
+                    <div class="slider">
+                      <input type="range" id="fader" min="0" max="30" value="15" step="1" 
+                      onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)"
+                      >
+                      
                    </div>
                </div>
                <div class="setting">
@@ -77,7 +78,7 @@
      </div>
      <div class="footer__slider">
           <i class="tesla_arrow_left"></i>
-          <span>20&deg</span>
+          <span class="rangeValue_2">15&deg C</span>
           <i class="tesla_arrow_right"></i>
      </div>
      <div class="footer__action">
@@ -86,6 +87,6 @@
      </div>
     </footer>
     
-    
+    <script src="./js/main.js"></script>
   </body>
 </html>

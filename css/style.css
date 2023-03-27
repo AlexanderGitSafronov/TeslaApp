@@ -433,7 +433,7 @@ text-decoration: none;
     stroke: #30D5C8;
     fill: transparent;
     stroke-width: 2px;
-    stroke-dasharray: 45 60;
+    stroke-dasharray: 20 60;
     transform: scale(4.7);
     transform-origin: center;
     transition: stroke-dasharray 1s linear;
@@ -504,6 +504,32 @@ text-decoration: none;
     border: 1px solid #333;
     box-shadow: 4px 8px 12px #000;
 }
+.slider {
+  flex-grow: 1;
+  position: relative;
+}
+#fader {
+  --size:8px;
+  -webkit-appearance: none;
+  width: 100%;
+  height: var(--size);
+  outline: none;
+  border-radius: var(--size);
+  background: linear-gradient(to bottom, #000, #333);
+  
+}
+#fader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 32px;
+  height: 16px;
+  background: linear-gradient(to bottom, #444, #000);
+  border-radius: var(--size);
+  border: 1px solid #333;
+  box-shadow: 4px 8px 12px #000;
+}
+
+
 /* Charset */
 .main .charger_tesla {
     margin-top: 40px;
